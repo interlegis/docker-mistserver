@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+  mistserver:
+    build: .
+    ports:
+      - 4242:4242 
+      - 1935:1935 
+      - 80:80
+      - 8080:8080
+      - 554:554 
+    volumes:
+      - videos:/videos/ 
+    restart: always
+
+volumes:
+  videos:
+    driver: local
